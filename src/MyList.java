@@ -24,8 +24,8 @@ public class MyList<T> {
                 newArray[i] = array[i];
             }
             array = newArray;
-            array[size++] = item;
         }
+        array[size++] = item;
     }
 
     private void checkBounds(int index) {
@@ -51,7 +51,7 @@ public class MyList<T> {
         array[index] = item;
     }
 
-    private void removeByIndex(int index) {
+    public void removeByIndex(int index) {
         checkBounds(index);
         for (int i = index; i < size - 1; i++) {
             array[i] = array[i + 1];
@@ -80,11 +80,9 @@ public class MyList<T> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("[");
         for (int i = 0; i < size; i++) {
-            sb.append(array[i]).append(", ");
+            sb.append(array[i]).append("\n");
         }
-        sb.append("]");
         return sb.toString();
     }
 }
