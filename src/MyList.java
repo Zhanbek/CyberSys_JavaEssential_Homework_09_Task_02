@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class MyList<T> {
     private int capacity;
@@ -29,7 +30,7 @@ public class MyList<T> {
 
     private void checkBounds(int index) {
         if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Вихід індексу " +  + index " за межі списку [0, " + size + "]");
+            throw new IndexOutOfBoundsException("Вихід індексу " +  + index + " за межі списку [0, " + size + "]");
         }
     }
 
@@ -76,5 +77,14 @@ public class MyList<T> {
         array = newArray;
     }
 
-
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i < size; i++) {
+            sb.append(array[i]).append(", ");
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }
